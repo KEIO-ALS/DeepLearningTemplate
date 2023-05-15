@@ -64,7 +64,7 @@ def train():
             epoch_loss, epoch_score = running_loss/(i+1), running_score/(j+1)    
             wandb.log({"Loss":epoch_loss, "Score":epoch_score})   
             result = f"Loss: {epoch_loss}  Score: {epoch_score}\n"
-            results += ("Epoch:"+epoch+1+"  "+result)
+            results += ("Epoch:"+str(epoch+1)+"  "+result)
             print(result)
             
         # モデル学習完了後の処理
