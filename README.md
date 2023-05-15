@@ -24,7 +24,7 @@ Clone the repository to your local directory.
 ### Step3. Library Installation
 Install the libraries required to run.
 
-`cd SampleImageClassification`
+`cd DeepLearningTemplate`
 
 `..\Scripts\python.exe -m pip install -r requirements.txt`
 
