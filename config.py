@@ -10,7 +10,7 @@ c = {
         "random_state": 111,
         "batch_size": 100,
         "num_workers": 2,
-        "device": "cpu",
+        "device": "cuda",
     },
     "data":{
   
