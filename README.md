@@ -20,11 +20,12 @@ Clone the repository to your local directory.
 
 `git clone https://github.com/KEIO-ALS/DeepLearningTemplate.git`
 
+`cd DeepLearningTemplate`
+
+`git checkout -b username`
 
 ### Step3. Library Installation
 Install the libraries required to run.
-
-`cd DeepLearningTemplate`
 
 `..\Scripts\python.exe -m pip install -r requirements.txt`
 
