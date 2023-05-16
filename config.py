@@ -28,7 +28,7 @@ c = {
         },
         "ResNet":{
             "name": "ResNet",
-            "state": True,
+            "state": False,
             "train_settings":{
                 "loss_function": nn.CrossEntropyLoss(),
                 "optimizer": optim.Adam,

@@ -1,5 +1,5 @@
 from models.SimpleCNN import SimpleCNN
-from models.ResNet import ResNet18
+# from models.ResNet import ResNet18
 
 import sys
 sys.path.append('../')
@@ -7,7 +7,7 @@ from config import get_config
 
 models = {
     "SimpleCNN": SimpleCNN,
-    "ResNet": ResNet18,
+    # "ResNet": ResNet18,
 }     
     
 # stateがTrueのモデルとその設定一覧を返す
