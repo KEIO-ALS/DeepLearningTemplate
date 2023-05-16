@@ -26,18 +26,6 @@ c = {
             },
             "param":{},        
         },
-        "ResNet":{
-            "name": "ResNet",
-            "state": True,
-            "train_settings":{
-                "loss_function": nn.CrossEntropyLoss(),
-                "optimizer": optim.Adam,
-                "eval_function": get_classification_accuracy,
-            },
-            "param":{
-                "num_classes": 10,
-            }
-        },
     },
     "wandb":{
         "learning_rate": 0.02,
