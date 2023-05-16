@@ -8,11 +8,14 @@ from datetime import datetime
 import wandb
 import random
 import numpy as np
+import ssl
 
 from data.dataset_utils import load_cifar10
 from models.model_utils import get_models
 
 from config import get_config
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 random_state = get_config("general", "random_state")
 random.seed(random_state)
@@ -26,10 +29,10 @@ def train():
     torch.multiprocessing.freeze_support()
     config_gen = get_config("general")
 
-    if config_gen("device") == "cuda":
+    if config_gen["device"] == "cuda":
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     else:
-        device = torch.device(config_gen("decive"))
+        device = torch.device(config_gen["device"])
 
     trainloader, testloader = load_cifar10()
     num_epochs = config_gen["num_epochs"]

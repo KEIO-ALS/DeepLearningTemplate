@@ -10,7 +10,7 @@ c = {
         "random_state": 111,
         "batch_size": 100,
         "num_workers": 2,
-        "device": "cpu",
+        "device": "cuda",
     },
     "data":{
   
@@ -28,7 +28,7 @@ c = {
         },
         "ResNet":{
             "name": "ResNet",
-            "state": False,
+            "state": True,
             "train_settings":{
                 "loss_function": nn.CrossEntropyLoss(),
                 "optimizer": optim.Adam,
