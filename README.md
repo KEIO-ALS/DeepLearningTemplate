@@ -35,6 +35,8 @@ Use Weights & Biases to observe loss and accuracy trends online
 
 ## Training Sample Model
 
+*ResNet model based on ResNet-18 in https://arxiv.org/pdf/1512.03385.pdf
+
 `python run.py`
 
 
