@@ -10,7 +10,6 @@ c = {
         "random_state": 111,
         "batch_size": 100,
         "num_workers": 2,
-        "device": "cpu",
     },
     "data":{
   
@@ -27,16 +26,8 @@ c = {
             "param":{},        
         },
         "ResNet":{
-            "name": "ResNet",
-            "state": True,
-            "train_settings":{
-                "loss_function": nn.CrossEntropyLoss(),
-                "optimizer": optim.Adam,
-                "eval_function": get_classification_accuracy,
-            },
-            "param":{
-                "num_classes": 10,
-            }
+            "state": False,
+            "param":{}
         },
     },
     "wandb":{
