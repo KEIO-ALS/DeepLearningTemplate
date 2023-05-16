@@ -26,10 +26,10 @@ def train():
     torch.multiprocessing.freeze_support()
     config_gen = get_config("general")
 
-    if config_gen("device") == "cuda":
+    if config_gen["device"] == "cuda":
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     else:
-        device = torch.device(config_gen("decive"))
+        device = torch.device(config_gen["decive"])
 
     trainloader, testloader = load_cifar10()
     num_epochs = config_gen["num_epochs"]
