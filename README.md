@@ -27,15 +27,16 @@ the new remote repository is named "new-origin",
 but can be named arbitarily.
 Replace "https://github.com/yourusername/new-repo.git" with the URL of your new GitHub repository.
 
-`git remote add new-origin https://github.com/yourusername/new-repo.git`
+`git remote remove origin`
+
+`git remote add origin https://github.com/yourusername/new-repo.git`
 
 `git add .`
 
 `git commit -m "first"`
 
-`git push new-origin master --force`
+`git push origin master --force`
 
-`git remote remove origin`
 
 
 ### Step3. Library Installation
