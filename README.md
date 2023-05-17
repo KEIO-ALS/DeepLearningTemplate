@@ -25,10 +25,18 @@ Clone the repository to your local directory.
 Add a new remote repository. In the following command, 
 the new remote repository is named "new-origin",
 but can be named arbitarily.
+Replace "https://github.com/yourusername/new-repo.git" with the URL of your new GitHub repository.
 
 `git remote add new-origin https://github.com/yourusername/new-repo.git`
 
-Replace "https://github.com/yourusername/new-repo.git" with the URL of your new GitHub repository.
+`git add .`
+
+`git commit -m "first"`
+
+`git push new-origin master --force`
+
+`git remote remove origin`
+
 
 ### Step3. Library Installation
 Install the libraries required to run.
