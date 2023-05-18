@@ -10,7 +10,7 @@ import random
 import numpy as np
 import ssl
 
-from data.dataset_utils import load_cifar10
+from data.dataset_utils import load_cifar10, load_addition, decode_addition
 from models.model_utils import get_models
 
 from config import get_config
@@ -34,7 +34,7 @@ def train():
     else:
         device = torch.device(config_gen["device"])
 
-    trainloader, testloader = load_cifar10()
+    trainloader, testloader = load_addition()
     num_epochs = config_gen["num_epochs"]
 
     for model, config in get_models():
@@ -68,6 +68,9 @@ def train():
                     x, y = x.to(device), y.to(device)
                     pred = model(x)
                     running_score += config["train_settings"]["eval_function"](pred, y)
+                print(decode_addition(x))
+                print(decode_addition(y))
+                print(decode_addition(pred))
             epoch_loss, epoch_score = running_loss/(i+1), running_score/(j+1)    
             wandb.log({"Loss":epoch_loss, "Score":epoch_score})   
             result = f"Loss: {epoch_loss}  Score: {epoch_score}\n"
