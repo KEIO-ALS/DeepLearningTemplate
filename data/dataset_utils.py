@@ -37,7 +37,7 @@ def decode_addition(seqs):
     index2char = {i: char for i, char in enumerate(' _0123456789+')}
     result = []
     for seq in seqs:
-        result.append("".join([index2char[char] for char in seq.tolist()]))
+        result.append("".join([index2char[int(char)] for char in seq.tolist()]))
     return result
 
 def load_addition():
@@ -46,7 +46,7 @@ def load_addition():
     X, Y = zip(*data)
     x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=_config_gen["test_size"])
 
-    char2index = {char: i for i, char in enumerate(' _0123456789+')}
+    char2index = {char: float(i) for i, char in enumerate(' _0123456789+')}
     transform = lambda x: torch.tensor(data=[char2index[char] for char in x], dtype=torch.long)
 
     train_data = AdditionDataset(list(zip(x_train, y_train)), transform, transform)

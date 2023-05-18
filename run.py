@@ -66,8 +66,9 @@ def train():
                 for j, data in tqdm(enumerate(testloader, 0)):
                     x, y = data
                     x, y = x.to(device), y.to(device)
-                    pred = model(x)
+                    pred = nn.Softmax(model(x))
                     running_score += config["train_settings"]["eval_function"](pred, y)
+                    break
                 print(decode_addition(x))
                 print(decode_addition(y))
                 print(decode_addition(pred))
